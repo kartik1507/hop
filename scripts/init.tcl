@@ -180,7 +180,7 @@
 #*****************************************************************************************
 
 # Set the reference directory for source file relative paths (by default the value is script directory path)
-set origin_dir "~"
+set origin_dir "../../"
 
 # Set the directory path for the original project from where this script was exported
 set orig_proj_dir "[file normalize "$origin_dir/hop/project_3"]"
@@ -496,7 +496,8 @@ set_property "top" "testCPU" $obj
 set_property "verilog_define" "MACROSAFE=1 SIMULATION_VIVADO=1 FPGA_MEMORY=1" $obj
 set_property "xelab.nosort" "1" $obj
 set_property "xelab.unifast" "" $obj
-set_property "xsim.view" "~/hop/project_3/testCPU_behav.wcfg" $obj
+set_property "xsim.simulate.runtime" "5ms" $obj
+set_property "xsim.view" "$origin_dir/hop/project_3/testCPU_behav.wcfg" $obj
 
 # Create 'synth_1' run (if not found)
 if {[string equal [get_runs -quiet synth_1] ""]} {
