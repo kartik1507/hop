@@ -6,6 +6,6 @@ cd riscv-gnu-toolchain/
 git reset --hard b22a5e2cf0dc314d350cbf91e9ef0c0041ddcab2
 mkdir build
 cd build/
-mkdir ~/hop/build/riscv
-../configure --prefix=~/hop/build/riscv --disable-float --disable-atomic --with-xlen=32 --with-arch=I
-make
+sudo mkdir /opt/riscv
+../configure --prefix=/opt/riscv --disable-float --disable-atomic --with-xlen=32 --with-arch=I
+sudo make
